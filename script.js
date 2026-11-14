@@ -17,9 +17,6 @@ console.log("Efter blocket, a:", a);
 // console.log("Efter blocket, b:", b);
 // console.log("Efter blocket, c:", c);
 
-// ---------------------------------------------------------------------------//
-// Uppgift 4
-
 // add är en variabel som innehåller en funktion
 // num1 och num2 är de två talen som funktionen tar emot
 const add = (num1, num2) => {
@@ -46,21 +43,53 @@ const add = (num1, num2) => {
   }
 };
 
+// Uppgift 5
+
+const num1 = 0;
+let arg1;
+let sum = false;
+
+console.log("Test 1");
+console.log(add(sum, 1));
+
+console.log("Test 2");
+console.log(add("0", 3));
+
+console.log("Test 3");
+console.log(add(3, "num1"));
+
+console.log("Test 4");
+console.log(add(-5, num1));
+
+console.log("Test 5");
+console.log(add(arg1, 7));
+
+console.log("Test 6");
+console.log(add());
+
+console.log("Slutvärden:");
+console.log(num1);
+console.log(sum);
+
 /*
-Reflektion uppgift 4
+Reflektion uppgift 5
 
-Ternary operator:
-Det är ett kortare sätt att skriva if/else på en rad.
-Det ser ut så här: villkor ? om sant : om falskt.
-En if-sats kan ha många rader kod inuti. En ternary passar bäst
-när man bara ska välja mellan två värden.
+Parameter, variabel och argument:
+- Parameter: namnet i funktionens parentes, t.ex. num1 och num2 i add.
+- Variabel: en låda med ett namn som håller ett värde, t.ex. sum.
+- Argument: värdet jag skickar in när jag anropar funktionen, t.ex. -5.
 
-Skillnaden mellan == och ===:
-== jämför bara värdet, så "0" == 0 blir true.
-=== jämför både värde och typ, så "0" === 0 blir false.
+Sista outputen (num1):
+Det blir 0. num1 utanför funktionen ändras aldrig. Parametern num1
+inuti funktionen är en egen variabel som bara finns medan funktionen körs.
 
-Hur jag kollade att parametrarna inte är null:
-Jag skrev num1 !== null && num2 !== null, och samma sak för undefined.
-Sedan kollade jag att båda är tal med typeof och !isNaN. Det behövs
-eftersom NaN också räknas som ett tal (typeof NaN är "number").
+Test 4, add(-5, num1) steg för steg:
+1. Parametrarna får num1 = -5 och num2 = 0.
+2. Jämförelserna ger false, false, true, false.
+3. Ternaryn skriver "truthy", eftersom -5 är truthy.
+4. If-satsen släpps igenom, eftersom båda är tal och inte null/undefined.
+5. Funktionen returnerar -5.
+
+Övriga anrop returnerar undefined, eftersom if-satsen inte släpper
+igenom dem (sträng, false, undefined eller inga argument).
 */
