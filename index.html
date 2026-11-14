@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--
+Reflektion uppgift 1
+
+Betydelsen av placeringen av script-taggen:
+Webbläsaren läser HTML uppifrån och ner. 
+Om script-taggen ligger i head kan JavaScript köras innan sidans innehåll har laddats. 
+Ligger den sist i body finns elementen redan på plats. 
+Därför valde jag att placera script-taggen längst ner i body.
+
+Hur attributet defer fungerar:
+Med defer laddas JavaScript samtidigt som HTML-koden, 
+men körs först när HTML-dokumentet har lästs in. 
+Det gör att script-taggen kan ligga i head utan att koden körs för tidigt.
+-->
