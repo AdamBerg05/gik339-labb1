@@ -1,5 +1,3 @@
-// Uppgift 2
-
 // Före blocket
 console.log(a);
 // console.log(b);
@@ -19,43 +17,50 @@ console.log("Efter blocket, a:", a);
 // console.log("Efter blocket, b:", b);
 // console.log("Efter blocket, c:", c);
 
-/*
-Reflektion uppgift 2
-
-Skillnad: var är inte blockbundet och går att använda utanför blocket.
-let och const är blockbundna och finns bara inuti blocket. let kan
-tilldelas nytt värde, const kan inte det.
-
-Placering av console.log():
-- Före blocket: a ger undefined (var hoistas). b och c ger ReferenceError.
-- I blocket: alla tre fungerar.
-- Efter blocket: a fungerar, b och c ger ReferenceError (is not defined).
-
-Raderna som ger fel är bortkommenterade så att koden inte kraschar.
-*/
 // ---------------------------------------------------------------------------//
-// Uppgift 3
+// Uppgift 4
 
 // add är en variabel som innehåller en funktion
 // num1 och num2 är de två talen som funktionen tar emot
 const add = (num1, num2) => {
-  // return skickar tillbaka summan
-  return num1 + num2;
+  // Jämförelser, bara för att testa
+  console.log(num1 == 0);
+  console.log(num2 === '0');
+  console.log(num2 === 0);
+  console.log(num1 == NaN);
+
+  // Ternary: skriver truthy eller falsy beroende på num1
+  console.log(num1 ? "truthy" : "falsy");
+
+  // Går bara in här om båda är riktiga tal
+  if (
+    num1 !== null && num1 !== undefined &&
+    num2 !== null && num2 !== undefined &&
+    typeof num1 === "number" && typeof num2 === "number" &&
+    !isNaN(num1) && !isNaN(num2)
+  ) {
+    // return skickar tillbaka summan
+    return num1 + num2;
+  } else {
+    console.log("Fel: ogiltig input");
+  }
 };
 
 /*
-Reflektion uppgift 3
+Reflektion uppgift 4
 
-Om jag hade använt let istället för const:
-Det hade fungerat lika bra. Skillnaden är att med let kan jag senare
-ändra vad add innehåller. Med const går det inte att ändra.
+Ternary operator:
+Det är ett kortare sätt att skriva if/else på en rad.
+Det ser ut så här: villkor ? om sant : om falskt.
+En if-sats kan ha många rader kod inuti. En ternary passar bäst
+när man bara ska välja mellan två värden.
 
-Funktionsdeklaration istället:
-function add(num1, num2) {
-  return num1 + num2;
-}
+Skillnaden mellan == och ===:
+== jämför bara värdet, så "0" == 0 blir true.
+=== jämför både värde och typ, så "0" === 0 blir false.
 
-Vad return betyder:
-Funktionen skickar tillbaka ett svar. Svaret kan jag sedan skriva ut
-eller spara i en variabel. När return körs är funktionen färdig.
+Hur jag kollade att parametrarna inte är null:
+Jag skrev num1 !== null && num2 !== null, och samma sak för undefined.
+Sedan kollade jag att båda är tal med typeof och !isNaN. Det behövs
+eftersom NaN också räknas som ett tal (typeof NaN är "number").
 */
