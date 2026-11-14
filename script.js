@@ -33,3 +33,29 @@ Placering av console.log():
 
 Raderna som ger fel är bortkommenterade så att koden inte kraschar.
 */
+// ---------------------------------------------------------------------------//
+// Uppgift 3
+
+// add är en variabel som innehåller en funktion
+// num1 och num2 är de två talen som funktionen tar emot
+const add = (num1, num2) => {
+  // return skickar tillbaka summan
+  return num1 + num2;
+};
+
+/*
+Reflektion uppgift 3
+
+Om jag hade använt let istället för const:
+Det hade fungerat lika bra. Skillnaden är att med let kan jag senare
+ändra vad add innehåller. Med const går det inte att ändra.
+
+Funktionsdeklaration istället:
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+Vad return betyder:
+Funktionen skickar tillbaka ett svar. Svaret kan jag sedan skriva ut
+eller spara i en variabel. När return körs är funktionen färdig.
+*/
