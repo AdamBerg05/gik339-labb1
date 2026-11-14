@@ -16,7 +16,8 @@ Reflektion uppgift 1
 
 Betydelsen av placeringen av script-taggen:
 Webbläsaren läser HTML uppifrån och ner. 
-Om script-taggen ligger i head kan JavaScript köras innan sidans innehåll har laddats. 
+Om script-taggen ligger i head pausar webbläsaren inläsningen av HTML,
+kör scriptet direkt och kan då inte hitta element som ännu inte finns.
 Ligger den sist i body finns elementen redan på plats. 
 Därför valde jag att placera script-taggen längst ner i body.
 
